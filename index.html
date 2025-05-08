@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Simple Landing Page</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
     * {
       margin: 0;
@@ -34,9 +35,14 @@
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
+      transition: text-decoration 0.3s;
     }
 
-    .hero {
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main.hero {
       padding: 60px 20px;
       text-align: center;
       background: #e2e8f0;
@@ -60,11 +66,18 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      transition: background 0.3s ease;
     }
 
-    .features {
+    .hero button:hover {
+      background: #0056b3;
+    }
+
+    section.features {
       display: flex;
-      justify-content: space-around;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
       padding: 40px 20px;
       background: #fff;
     }
@@ -76,6 +89,13 @@
 
     .feature h3 {
       margin-bottom: 10px;
+    }
+
+    @media (min-width: 768px) {
+      section.features {
+        flex-direction: row;
+        justify-content: space-around;
+      }
     }
 
     footer {
@@ -97,11 +117,11 @@
     </nav>
   </header>
 
-  <section class="hero">
+  <main class="hero">
     <h2>Welcome to Our Website</h2>
     <p>Discover amazing products and services tailored just for you.</p>
-    <button>Get Started</button>
-  </section>
+    <button aria-label="Get started with our services">Get Started</button>
+  </main>
 
   <section class="features">
     <div class="feature">
